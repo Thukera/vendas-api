@@ -1,0 +1,12 @@
+create database VENDAS; 
+
+create table PRODUTOS (
+	ID BIGSERIAL not NULL primary key,
+	NOME VARCHAR(100) not null,
+	DESCRICAO VARCHAR(255),
+	PRECO numeric (16,2),
+	SKU VARCHAR(20),
+	DATE data_cadastro
+);
+
+select * from  PRODUTO;
