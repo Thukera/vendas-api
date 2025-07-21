@@ -12,8 +12,8 @@ import lombok.Data;
 public class ProdutoFormRequest {
 
 	private Long id;
-	private String descricao;
 	private String nome;
+	private String descricao;
 	private BigDecimal preco;
 	private String sku;
 	
@@ -40,11 +40,11 @@ public class ProdutoFormRequest {
 		this.sku = sku;
 	}
 
-	public ProdutoFormRequest(Long id, String descricao, String nome, BigDecimal preco, String sku,LocalDate cadastro) {
+	public ProdutoFormRequest(Long id, String nome, String descricao, BigDecimal preco, String sku,LocalDate cadastro) {
 		super();
 		this.id = id;
-		this.descricao = descricao;
 		this.nome = nome;
+		this.descricao = descricao;
 		this.preco = preco;
 		this.sku = sku;
 		this.cadastro = cadastro;
