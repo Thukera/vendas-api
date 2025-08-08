@@ -38,11 +38,13 @@ public class ClienteController {
 	@PutMapping("{id}")
 	public ResponseEntity<Void> atualizar(@PathVariable Long id, @RequestBody ClienteFormRequest request) {
 		
+		System.out.println("CLiente : " + request);
 		Optional<Cliente> clienteExistente = repository.findById(id);	
 		if(clienteExistente.isEmpty()) {
 			return ResponseEntity.notFound().build();
 		}
 		Cliente cliente = request.toModel();
+		System.out.println("CLiente : " + request);
 		cliente.setId(id);
 		repository.save(cliente);
 		return ResponseEntity.noContent().build();

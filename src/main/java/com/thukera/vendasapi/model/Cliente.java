@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import lombok.Data;
 import lombok.ToString;
 
@@ -30,6 +31,14 @@ public class Cliente {
 	@Column(name = "data_cadastro")
 	private LocalDate dataCadastro;
 
+	@PrePersist
+	public void prePersist() {
+		setDataCadastro(LocalDate.now());
+	}
+	
+	public Cliente() {
+		super();
+	}
 	
 	public Cliente(Long id, LocalDate nascimento, String cpf, String nome, String endereco, String telefone,
 			String email, LocalDate dataCadastro) {
@@ -44,6 +53,17 @@ public class Cliente {
 		this.dataCadastro = dataCadastro;
 	}
 	
+	public Cliente(LocalDate nascimento, String cpf, String nome, String endereco, String telefone,
+			String email, LocalDate dataCadastro) {
+		super();
+		this.nascimento = nascimento;
+		this.cpf = cpf;
+		this.nome = nome;
+		this.endereco = endereco;
+		this.telefone = telefone;
+		this.email = email;
+		this.dataCadastro = dataCadastro;
+	}
 	
 
 
