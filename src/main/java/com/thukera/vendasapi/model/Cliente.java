@@ -8,12 +8,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
+import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.ToString;
 
 @Data
 @ToString
-@Entity(name = "cliente")
+@Entity
+@Table(name = "cliente")
 public class Cliente {
 
 	@Id
